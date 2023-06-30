@@ -38,7 +38,7 @@
     height: 100vh;
     min-height: 100%;
     margin-left: $sideBarWidth;
-    background: #f0f2f5;
+    background: #fcfcff;
 
     /* main-content 属性动画 */
     transition: margin-left var(--pure-transition-duration);
@@ -55,6 +55,7 @@
     right: 0;
     z-index: 998;
     width: calc(100% - 210px);
+    box-shadow: 0 2px 4px 0 #f4f6fe;
 
     /* fixed-header 属性左上角动画 */
     transition: width var(--pure-transition-duration);
@@ -83,7 +84,8 @@
     overflow: hidden;
     font-size: 0;
     background: $menuBg;
-    box-shadow: 0 0 1px #888;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0 2px 7px 0 rgb(16 37 136 / 56%);
 
     /* 展开动画 */
     transition: width var(--pure-transition-duration);
@@ -559,9 +561,9 @@ body[layout="vertical"] {
     width: 54px;
   }
 
-  .sidebar-logo-container {
-    background: $sidebarLogo;
-  }
+  // .sidebar-logo-container {
+  //   background: $sidebarLogo;
+  // }
 
   .hideSidebar {
     .fixed-header {

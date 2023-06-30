@@ -1,11 +1,11 @@
 {
   "Version": "0.0.1",
-  "Title": "后台管理系统",
+  "Title": "进出口商品检验鉴定子系统V2.0",
   "FixedHeader": true,
   "HiddenSideBar": false,
   "MultiTagsCache": false,
   "KeepAlive": true,
-  "Layout": "horizontal",
+  "Layout": "vertical",
   "Theme": "default",
   "DarkMode": false,
   "Grey": false,

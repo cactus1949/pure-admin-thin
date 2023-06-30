@@ -59,10 +59,10 @@ const { title } = useNav();
       height: 32px;
       margin: 2px 0 0 12px;
       overflow: hidden;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
       line-height: 32px;
-      color: $subMenuActiveText;
+      color: #040439;
       text-overflow: ellipsis;
       white-space: nowrap;
     }

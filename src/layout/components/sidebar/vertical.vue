@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import Logo from "./logo.vue";
+// import Logo from "./logo.vue";
 import { useRoute } from "vue-router";
 import { emitter } from "@/utils/mitt";
 import SidebarItem from "./sidebarItem.vue";
-import leftCollapse from "./leftCollapse.vue";
 import { useNav } from "@/layout/hooks/useNav";
 import { responsiveStorageNameSpace } from "@/config";
 import { storageLocal, isAllEmpty } from "@pureadmin/utils";
@@ -18,7 +17,7 @@ const showLogo = ref(
   )?.showLogo ?? true
 );
 
-const { device, pureApp, isCollapse, menuSelect, toggleSideBar } = useNav();
+const { device, pureApp, isCollapse, menuSelect } = useNav();
 
 const subMenuData = ref([]);
 
@@ -82,7 +81,7 @@ onBeforeUnmount(() => {
     v-loading="loading"
     :class="['sidebar-container', showLogo ? 'has-logo' : '']"
   >
-    <Logo v-if="showLogo" :collapse="isCollapse" />
+    <!-- <Logo v-if="showLogo" :collapse="isCollapse" /> -->
     <el-scrollbar
       wrap-class="scrollbar-wrapper"
       :class="[device === 'mobile' ? 'mobile' : 'pc']"
@@ -105,11 +104,6 @@ onBeforeUnmount(() => {
         />
       </el-menu>
     </el-scrollbar>
-    <leftCollapse
-      v-if="device !== 'mobile'"
-      :is-active="pureApp.sidebar.opened"
-      @toggleClick="toggleSideBar"
-    />
   </div>
 </template>
 

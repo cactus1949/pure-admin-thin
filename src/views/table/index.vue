@@ -6,9 +6,6 @@ import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 
 import Delete from "@iconify-icons/ep/delete";
 import EditPen from "@iconify-icons/ep/edit-pen";
-import Search from "@iconify-icons/ep/search";
-import Refresh from "@iconify-icons/ep/refresh";
-import AddFill from "@iconify-icons/ri/add-circle-line";
 
 defineOptions({
   name: "Dept"
@@ -35,7 +32,7 @@ const {
       ref="formRef"
       :inline="true"
       :model="form"
-      class="search-form bg-bg_color w-[99/100] pl-8 pt-[12px]"
+      class="search-form w-[99/100] pl-8 pt-[12px] mb-[55px]"
     >
       <el-form-item label="部门名称：" prop="name">
         <el-input
@@ -57,34 +54,23 @@ const {
         </el-select>
       </el-form-item>
       <el-form-item>
-        <el-button
-          type="primary"
-          :icon="useRenderIcon(Search)"
-          :loading="loading"
-          @click="onSearch"
-        >
+        <el-button type="primary" :loading="loading" @click="onSearch">
           搜索
         </el-button>
-        <el-button :icon="useRenderIcon(Refresh)" @click="resetForm(formRef)">
-          重置
-        </el-button>
+        <el-button @click="resetForm(formRef)"> 重置 </el-button>
       </el-form-item>
     </el-form>
 
     <PureTableBar
-      title="部门列表（仅演示，操作后不生效）"
+      title="水尺检测综合查询"
       :columns="columns"
       :tableRef="tableRef?.getTableRef()"
       @refresh="onSearch"
     >
       <template #buttons>
-        <el-button
-          type="primary"
-          :icon="useRenderIcon(AddFill)"
-          @click="openDialog()"
-        >
-          新增部门
-        </el-button>
+        <el-button type="text" @click="openDialog()"> 提交 </el-button>
+        <el-divider direction="vertical" />
+        <el-button type="text" @click="openDialog()"> 删除 </el-button>
       </template>
       <template v-slot="{ size, dynamicColumns }">
         <pure-table

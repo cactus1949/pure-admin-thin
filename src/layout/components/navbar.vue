@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import Search from "./search/index.vue";
-import Notice from "./notice/index.vue";
 import mixNav from "./sidebar/mixNav.vue";
 import { useNav } from "@/layout/hooks/useNav";
-import Breadcrumb from "./sidebar/breadCrumb.vue";
+// import Breadcrumb from "./sidebar/breadCrumb.vue";
 import topCollapse from "./sidebar/topCollapse.vue";
 import LogoutCircleRLine from "@iconify-icons/ri/logout-circle-r-line";
 import Setting from "@iconify-icons/ri/settings-3-line";
+
+import Logo from "./sidebar/logo.vue";
 
 const {
   layout,
@@ -23,7 +23,7 @@ const {
 
 <template>
   <div
-    class="navbar bg-[#fff] shadow-sm shadow-[rgba(0, 21, 41, 0.08)] dark:shadow-[#0d0d0d]"
+    class="navbar bg-[#fff] shadow-sm shadow-[rgba(0, 21, 41, 0.08)] dark:shadow-[#0d0d0d] flex items-center"
   >
     <topCollapse
       v-if="device === 'mobile'"
@@ -31,19 +31,11 @@ const {
       :is-active="pureApp.sidebar.opened"
       @toggleClick="toggleSideBar"
     />
-
-    <Breadcrumb
-      v-if="layout !== 'mix' && device !== 'mobile'"
-      class="breadcrumb-container"
-    />
+    <Logo :collapse="true" />
 
     <mixNav v-if="layout === 'mix'" />
 
     <div v-if="layout === 'vertical'" class="vertical-header-right">
-      <!-- 菜单搜索 -->
-      <Search />
-      <!-- 通知 -->
-      <Notice id="header-notice" />
       <!-- 退出登录 -->
       <el-dropdown trigger="click">
         <span class="el-dropdown-link navbar-bg-hover select-none">
@@ -76,13 +68,14 @@ const {
 <style lang="scss" scoped>
 .navbar {
   width: 100%;
-  height: 48px;
+  height: 86px;
+  padding: 0 33px;
   overflow: hidden;
 
   .hamburger-container {
     float: left;
     height: 100%;
-    line-height: 48px;
+    line-height: 86px;
     cursor: pointer;
   }
 
@@ -91,14 +84,14 @@ const {
     align-items: center;
     justify-content: flex-end;
     min-width: 280px;
-    height: 48px;
+    height: 86px;
     color: #000000d9;
 
     .el-dropdown-link {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      height: 48px;
+      height: 86px;
       padding: 10px;
       color: #000000d9;
       cursor: pointer;
