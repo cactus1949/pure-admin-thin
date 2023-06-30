@@ -13,9 +13,9 @@ const themeColors = {
     menuHover: "#4091f7",
     subMenuBg: "#0f0303",
     subMenuActiveBg: "#4091f7",
-    menuText: "rgb(254 254 254 / 65%)",
+    menuText: "#2975FD",
     sidebarLogo: "#002140",
-    menuTitleHover: "#fff",
+    menuTitleHover: "#2975FD",
     menuActiveBefore: "#4091f7"
   },
   light: {

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import Logo from "./logo.vue";
 import { useRoute } from "vue-router";
 import { emitter } from "@/utils/mitt";
 import SidebarItem from "./sidebarItem.vue";
@@ -81,7 +80,6 @@ onBeforeUnmount(() => {
     v-loading="loading"
     :class="['sidebar-container', showLogo ? 'has-logo' : '']"
   >
-    <!-- <Logo v-if="showLogo" :collapse="isCollapse" /> -->
     <el-scrollbar
       wrap-class="scrollbar-wrapper"
       :class="[device === 'mobile' ? 'mobile' : 'pc']"
@@ -107,8 +105,24 @@ onBeforeUnmount(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 :deep(.el-loading-mask) {
   opacity: 0.45;
+}
+
+:deep(.el-scrollbar__view) {
+  height: 100%;
+}
+
+:deep(.el-menu) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .el-menu-item {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

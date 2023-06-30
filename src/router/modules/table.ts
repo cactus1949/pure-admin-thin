@@ -3,7 +3,7 @@ export default {
   redirect: "/table/index",
   meta: {
     icon: "informationLine",
-    title: "table",
+    title: "中间水尺计算",
     showLink: true,
     rank: 9
   },
@@ -13,7 +13,7 @@ export default {
       name: "TableIndex",
       component: () => import("@/views/table/index.vue"),
       meta: {
-        title: "tableIndex"
+        title: "中间水尺计算"
       }
     }
   ]
