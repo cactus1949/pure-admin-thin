@@ -19,7 +19,7 @@ const { title } = useNav();
         class="sidebar-logo-link"
         :to="getTopMenu()?.path ?? '/'"
       >
-        <img src="/logo.svg" alt="logo" />
+        <img src="/logo.png" alt="logo" />
         <span class="sidebar-title">{{ title }}</span>
       </router-link>
       <router-link
@@ -51,7 +51,7 @@ const { title } = useNav();
 
     img {
       display: inline-block;
-      height: 32px;
+      height: 42px;
     }
 
     .sidebar-title {
