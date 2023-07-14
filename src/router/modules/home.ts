@@ -7,7 +7,7 @@ export default {
   component: Layout,
   redirect: "/welcome",
   meta: {
-    icon: "homeFilled",
+    icon: "menu1",
     title: "首次水尺计算",
     rank: 0
   },

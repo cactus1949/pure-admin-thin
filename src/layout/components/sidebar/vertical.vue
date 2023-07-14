@@ -96,6 +96,7 @@ onBeforeUnmount(() => {
         <sidebar-item
           v-for="routes in menuData"
           :key="routes.path"
+          :current-active="defaultActive"
           :item="routes"
           :base-path="routes.path"
           class="outer-most select-none"
@@ -116,13 +117,19 @@ onBeforeUnmount(() => {
 
 :deep(.el-menu) {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   justify-content: space-around;
 
   .el-menu-item {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    span {
+      font-size: 20px;
+    }
   }
 }
 </style>

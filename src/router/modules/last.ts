@@ -2,7 +2,7 @@ export default {
   path: "/last",
   redirect: "/last/index",
   meta: {
-    icon: "informationLine",
+    icon: "menu3",
     title: "末次水尺计算",
     showLink: true,
     rank: 10

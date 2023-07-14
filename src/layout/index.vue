@@ -159,12 +159,6 @@ const layoutHeader = defineComponent({
       class="app-mask"
       @click="useAppStoreHook().toggleSideBar()"
     />
-    <Vertical
-      v-show="
-        !pureSetting.hiddenSideBar &&
-        (layout.includes('vertical') || layout.includes('mix'))
-      "
-    />
     <div
       :class="[
         'main-container',
@@ -188,6 +182,12 @@ const layoutHeader = defineComponent({
         <app-main :fixed-header="set.fixedHeader" />
       </el-scrollbar>
     </div>
+    <Vertical
+      v-show="
+        !pureSetting.hiddenSideBar &&
+        (layout.includes('vertical') || layout.includes('mix'))
+      "
+    />
     <!-- 系统设置 -->
     <setting />
   </div>

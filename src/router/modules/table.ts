@@ -2,7 +2,7 @@ export default {
   path: "/table",
   redirect: "/table/index",
   meta: {
-    icon: "informationLine",
+    icon: "menu2",
     title: "中间水尺计算",
     showLink: true,
     rank: 9

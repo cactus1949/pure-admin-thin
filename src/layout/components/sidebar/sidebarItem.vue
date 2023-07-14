@@ -12,7 +12,18 @@ import EpArrowDown from "@iconify-icons/ep/arrow-down-bold";
 import ArrowLeft from "@iconify-icons/ep/arrow-left-bold";
 import ArrowRight from "@iconify-icons/ep/arrow-right-bold";
 
-const { layout, isCollapse, tooltipEffect, getDivStyle } = useNav();
+const {
+  layout,
+  isCollapse,
+  tooltipEffect,
+  getDivStyle,
+  menu1,
+  menu2,
+  menu3,
+  menu1_selected,
+  menu2_selected,
+  menu3_selected
+} = useNav();
 
 const props = defineProps({
   item: {
@@ -25,6 +36,10 @@ const props = defineProps({
   basePath: {
     type: String,
     default: ""
+  },
+  currentActive: {
+    type: String,
+    default: "/welcome"
   }
 });
 
@@ -178,6 +193,26 @@ function resolvePath(routePath) {
     return path.posix.resolve(props.basePath, routePath);
   }
 }
+
+function getMenuImage(routePath) {
+  let defaultMenu = menu1;
+  switch (routePath) {
+    case "menu1":
+      defaultMenu = props.currentActive !== "/welcome" ? menu1 : menu1_selected;
+      break;
+    case "menu2":
+      defaultMenu =
+        props.currentActive !== "/table/index" ? menu2 : menu2_selected;
+      break;
+    case "menu3":
+      defaultMenu =
+        props.currentActive !== "/last/index" ? menu3 : menu3_selected;
+      break;
+    default:
+      break;
+  }
+  return defaultMenu;
+}
 </script>
 
 <template>
@@ -195,13 +230,10 @@ function resolvePath(routePath) {
       class="sub-menu-icon"
       :style="getsubMenuIconStyle"
     >
-      <component
-        :is="
-          useRenderIcon(
-            toRaw(onlyOneChild.meta.icon) ||
-              (props.item.meta && toRaw(props.item.meta.icon))
-          )
-        "
+      <img
+        class="w-[100px] h-[100px] object-contain"
+        :src="getMenuImage(props.item.meta.icon)"
+        alt=""
       />
     </div>
     <span

@@ -68,7 +68,7 @@ const {
 <style lang="scss" scoped>
 .navbar {
   width: 100%;
-  height: 86px;
+  height: 174px;
   padding: 0 33px;
   overflow: hidden;
 
@@ -97,12 +97,12 @@ const {
       cursor: pointer;
 
       p {
-        font-size: 14px;
+        font-size: 26px;
       }
 
       img {
-        width: 22px;
-        height: 22px;
+        width: 36px;
+        height: 40px;
         border-radius: 50%;
       }
     }

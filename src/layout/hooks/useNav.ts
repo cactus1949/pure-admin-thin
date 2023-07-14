@@ -2,7 +2,7 @@ import { storeToRefs } from "pinia";
 import { getConfig } from "@/config";
 import { emitter } from "@/utils/mitt";
 import { routeMetaType } from "../types";
-import userAvatar from "@/assets/user.jpg";
+import userAvatar from "@/assets/user.png";
 import { getTopMenu } from "@/router/utils";
 import { useGlobal } from "@pureadmin/utils";
 import { useRouter, useRoute } from "vue-router";
@@ -11,6 +11,12 @@ import { computed, type CSSProperties } from "vue";
 import { useAppStoreHook } from "@/store/modules/app";
 import { useUserStoreHook } from "@/store/modules/user";
 import { usePermissionStoreHook } from "@/store/modules/permission";
+import menu1 from "@/assets/menu/1.png";
+import menu1_selected from "@/assets/menu/1-o.png";
+import menu2 from "@/assets/menu/2.png";
+import menu2_selected from "@/assets/menu/2-o.png";
+import menu3 from "@/assets/menu/3.png";
+import menu3_selected from "@/assets/menu/3-o.png";
 
 const errorInfo = "当前路由配置不正确，请检查配置";
 
@@ -128,6 +134,12 @@ export function useNav() {
     username,
     userAvatar,
     avatarsStyle,
-    tooltipEffect
+    tooltipEffect,
+    menu1,
+    menu1_selected,
+    menu2,
+    menu2_selected,
+    menu3,
+    menu3_selected
   };
 }
